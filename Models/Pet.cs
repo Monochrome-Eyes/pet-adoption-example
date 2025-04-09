@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace midterm_project.Models;
 
-public class Pets {
+public class Pet {
 	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 	public int Id { get; set; }
 
@@ -11,8 +11,8 @@ public class Pets {
 	public string? Name { get; set; }
 
 	[Required]
-	public string? Url { get; set; }
+	public string? Description { get; set; }
 
 	[Required]
-	public string? Description { get; set; }
+	public string? Url { get; set; }
 }
