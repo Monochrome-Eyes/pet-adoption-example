@@ -17,7 +17,7 @@ public class EFPetRepository: IPetRepository {
 		return newPet;
 	}
 
-	public Pet GetPetById(int id) {
+	public Pet? GetPetById(int id) {
 		return _context.Pet.SingleOrDefault(p => p.Id == id);
 	}
 

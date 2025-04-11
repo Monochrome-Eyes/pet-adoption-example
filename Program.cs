@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using midterm_project.Migrations;
+using midterm_project.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<PetDbContext>(options => 
     options.UseSqlite(builder.Configuration.GetConnectionString("PetsDB")));
-
+builder.Services.AddScoped<IPetRepository, EFPetRepository>();
 
 
 var app = builder.Build();
