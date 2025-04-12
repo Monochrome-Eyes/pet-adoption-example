@@ -1,0 +1,7 @@
+{
+	"csharp.format.enable": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[aspnetcorerazor]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp"
+	}
+}

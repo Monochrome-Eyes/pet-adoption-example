@@ -5,3 +5,14 @@
 }
 
 <h1>View All Pets</h1>
+
+<div>
+	@foreach (var pet in Model) {
+		<div class="row">
+			<h2>@pet.Name</h2>
+			<p>@pet.Description</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, necessitatibus quia ut cumque deserunt non dolor numquam, et repellendus nemo dolores porro consectetur fugit repudiandae aperiam atque rem libero ullam!</p>
+		</div>
+		<button class="btn btn-sm btn-primary">Details</button>
+	}
+</div>

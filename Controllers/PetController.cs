@@ -14,7 +14,7 @@ public class PetController: Controller {
 	}
 
 	public IActionResult Index() {
-		return RedirectToAction("Create");
+		return RedirectToAction("List");
 		// return View();
 	}
 
