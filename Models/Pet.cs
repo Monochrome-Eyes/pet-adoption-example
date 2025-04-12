@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace midterm_project.Models;
 
 public class Pet {
-	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 	public int Id { get; set; }
 
 	[Required]
