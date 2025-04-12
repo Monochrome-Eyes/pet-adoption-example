@@ -13,6 +13,11 @@
 			<p>@pet.Description</p>
 			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, necessitatibus quia ut cumque deserunt non dolor numquam, et repellendus nemo dolores porro consectetur fugit repudiandae aperiam atque rem libero ullam!</p>
 		</div>
-		<button class="btn btn-sm btn-primary">Details</button>
+		<a
+			class="btn btn-sm btn-primary"
+			asp-controller="Pet"
+			asp-action="Details"
+			asp-route-id="@pet.Id"
+		>View/Edit Details</a>
 	}
 </div>

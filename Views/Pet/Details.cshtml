@@ -1,0 +1,14 @@
+@model midterm_project.Models.Pet
+
+@{
+	ViewData["Title"] = "Details Page";
+}
+
+<h1>View Pet Details</h1>
+<form asp-controller="Pet" asp-action="Details" method="post">
+	<partial name="_PetInputForm" model="Model" />
+	<input type="hidden" asp-for="Id" />
+
+	<a class="btn btn-light" asp-controller="Pet" asp-action="List">Back</a>
+	<input type="submit" class="btn btn-primary" asp-controller="Pet" asp-action="Details" value="Save" />
+</form>

@@ -36,4 +36,26 @@ public class PetController: Controller {
 	public IActionResult List() {
 		return View(_repository.GetAllPets());
 	}
+
+	[HttpPost]
+	public IActionResult Details(Pet pet) {
+		if (!ModelState.IsValid) {
+			return View();
+		}
+
+		Console.WriteLine("Worky");
+		_repository.UpdatePet(pet);
+		return RedirectToAction("List");
+	}
+
+	public IActionResult Details(int id) {
+		var job = _repository.GetPetById(id);
+
+		if (job == null) {
+			Console.WriteLine("No worky Details");
+			return View(RedirectToAction("List"));
+		}
+
+		return View(job);
+	}
 }

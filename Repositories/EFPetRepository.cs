@@ -31,6 +31,7 @@ public class EFPetRepository: IPetRepository {
 			originalPet.Name = pet.Name;
 			originalPet.Description = pet.Description;
 			originalPet.Url = pet.Url;
+			_context.SaveChanges();
 		}
 		return pet;
 	}
