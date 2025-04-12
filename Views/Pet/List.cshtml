@@ -6,9 +6,35 @@
 
 <h1>View All Pets</h1>
 
-<div>
+<div class="row">
 	@foreach (var pet in Model) {
-		<div class="row">
+		<div class="card col-4" style="width: 18rem;">
+			<img src="@Url.Content($"{pet.Url}")" class="card-img-top" />
+			<div class="card-body">
+				<h5 class="card-title">@pet.Name</h5>
+				<p class="card-text">@pet.Description</p>
+				<a
+					class="btn btn-sm btn-primary"
+					asp-controller="Pet"
+					asp-action="Details"
+					asp-route-id="@pet.Id"
+				>Details</a>
+				<a
+					class="btn btn-sm btn-primary"
+					asp-controller="Pet"
+					asp-action="Edit"
+					asp-route-id="@pet.Id"
+				>Edit</a>
+				<a
+					class="btn btn-sm btn-danger"
+					asp-controller="Pet"
+					asp-action="Delete"
+					asp-route-id="@pet.Id"
+				>Delete</a>
+			</div>
+		</div>
+
+		@* <div class="row">
 			<h2>@pet.Name</h2>
 			<p>@pet.Description</p>
 			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, necessitatibus quia ut cumque deserunt non dolor numquam, et repellendus nemo dolores porro consectetur fugit repudiandae aperiam atque rem libero ullam!</p>
@@ -18,6 +44,21 @@
 			asp-controller="Pet"
 			asp-action="Details"
 			asp-route-id="@pet.Id"
-		>View/Edit Details</a>
+		>Details</a>
+		<a
+			class="btn btn-sm btn-primary"
+			asp-controller="Pet"
+			asp-action="Edit"
+			asp-route-id="@pet.Id"
+		>Edit</a> *@
 	}
+	<div class="row">
+		<span>
+			<a
+				class="btn btn-primary"
+				asp-controller="Pet"
+				asp-action="Create"
+			>Create New</a>
+		</span>
+	</div>
 </div>

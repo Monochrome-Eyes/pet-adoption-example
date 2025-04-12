@@ -38,7 +38,7 @@ public class PetController: Controller {
 	}
 
 	[HttpPost]
-	public IActionResult Details(Pet pet) {
+	public IActionResult Edit(Pet pet) {
 		if (!ModelState.IsValid) {
 			return View();
 		}
@@ -48,14 +48,26 @@ public class PetController: Controller {
 		return RedirectToAction("List");
 	}
 
-	public IActionResult Details(int id) {
+	public IActionResult Edit(int id) {
 		var job = _repository.GetPetById(id);
 
 		if (job == null) {
-			Console.WriteLine("No worky Details");
 			return View(RedirectToAction("List"));
 		}
 
 		return View(job);
+	}
+
+	[HttpGet]
+	public IActionResult Details(int id) {
+		var pet = _repository.GetPetById(id);
+		if (pet == null) return View(RedirectToAction("List"));
+
+		return View(pet);
+	}
+
+	public IActionResult Delete(int id) {
+		_repository.DeletePetById(id);
+		return View(RedirectToAction("List"));
 	}
 }
