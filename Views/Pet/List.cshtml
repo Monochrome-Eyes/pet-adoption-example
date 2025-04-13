@@ -8,25 +8,25 @@
 
 <div class="row">
 	@foreach (var pet in Model) {
-		<div class="card col-4" style="width: 18rem;">
-			<img src="@Url.Content($"{pet.ImgUrl}")" class="card-img-top" />
+		<div class="card col-4 mx-3" style="width: 18rem;">
+			<img src="@Url.Content($"{pet.ImgUrl}")" class="mx-1 mt-1 rounded" />
 			<div class="card-body">
 				<h5 class="card-title">@pet.Name</h5>
 				<p class="card-text">@pet.Description</p>
 				<a
-					class="btn btn-sm btn-primary"
+					class="btn btn-sm btn-primary mx-1"
 					asp-controller="Pet"
 					asp-action="Details"
 					asp-route-id="@pet.Id"
 				>Details</a>
 				<a
-					class="btn btn-sm btn-primary"
+					class="btn btn-sm btn-primary mx-1"
 					asp-controller="Pet"
 					asp-action="Edit"
 					asp-route-id="@pet.Id"
 				>Edit</a>
 				<a
-					class="btn btn-sm btn-danger"
+					class="btn btn-sm btn-danger mx-1"
 					asp-controller="Pet"
 					asp-action="Delete"
 					asp-route-id="@pet.Id"
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	}
-	<div class="row">
+	<div class="row mt-3">
 		<span>
 			<a
 				class="btn btn-primary"
