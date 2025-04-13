@@ -42,17 +42,17 @@ public class PetController: Controller {
 		}
 
 		_repository.UpdatePet(pet);
-		return RedirectToAction("List");
+		return RedirectToAction("Details", new {id = pet.Id});
 	}
 
 	public IActionResult Edit(int id) {
-		var job = _repository.GetPetById(id);
+		var pet = _repository.GetPetById(id);
 
-		if (job == null) {
-			return View(RedirectToAction("List"));
+		if (pet == null) {
+			return RedirectToAction("List");
 		}
 
-		return View(job);
+		return View(pet);
 	}
 
 	[HttpGet]
