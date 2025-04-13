@@ -4,6 +4,10 @@
 	ViewData["Title"] = "All Pets";
 }
 
+<h1>Create a New Pet</h1>
 <form asp-controller="Pet" asp-action="Create" method="post">
 	<partial name="_PetInputForm" model="Model" />
+
+	<a class="btn btn-light" asp-controller="Pet" asp-action="List">Back</a>
+	<input type="submit" class="btn btn-primary" value="Create" />
 </form>

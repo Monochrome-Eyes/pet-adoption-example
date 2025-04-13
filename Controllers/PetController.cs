@@ -15,7 +15,6 @@ public class PetController: Controller {
 
 	public IActionResult Index() {
 		return RedirectToAction("List");
-		// return View();
 	}
 
 	[HttpGet]
@@ -26,7 +25,6 @@ public class PetController: Controller {
 	[HttpPost]
 	public IActionResult Create(Pet newPet) {
 		if (!ModelState.IsValid) {
-			Console.WriteLine("Not worky");
 			return View();
 		}
 		_repository.CreatePet(newPet);
@@ -43,7 +41,6 @@ public class PetController: Controller {
 			return View();
 		}
 
-		Console.WriteLine("Worky");
 		_repository.UpdatePet(pet);
 		return RedirectToAction("List");
 	}

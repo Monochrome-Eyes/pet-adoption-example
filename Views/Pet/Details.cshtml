@@ -4,8 +4,14 @@
 	ViewData["Title"] = "Pet Details";
 }
 
-<h1>Pet Details</h1>
-<h2>@Model.Name</h2>
-<p>@Model.Description</p>
-
-<a class="btn btn-light" asp-controller="Pet" asp-action="List">Back</a>
+<div class="row">
+	<div class="col-3">
+		<img src="@Model.ImgUrl" class="img-fluid" />
+	</div>
+	<div class="col-8">
+		<h1>Pet Details</h1>
+		<h2>@Model.Name</h2>
+		<p>@Model.Description</p>
+		<a class="btn btn-light" asp-controller="Pet" asp-action="List">Back</a>
+	</div>
+</div>
