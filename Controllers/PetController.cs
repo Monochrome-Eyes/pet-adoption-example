@@ -28,7 +28,7 @@ public class PetController: Controller {
 			return View();
 		}
 		_repository.CreatePet(newPet);
-		return RedirectToAction("List");
+		return RedirectToAction("Details", new {id = newPet.Id});
 	}
 
 	public IActionResult List() {
@@ -58,13 +58,13 @@ public class PetController: Controller {
 	[HttpGet]
 	public IActionResult Details(int id) {
 		var pet = _repository.GetPetById(id);
-		if (pet == null) return View(RedirectToAction("List"));
+		if (pet == null) return RedirectToAction("List");
 
 		return View(pet);
 	}
 
 	public IActionResult Delete(int id) {
 		_repository.DeletePetById(id);
-		return View(RedirectToAction("List"));
+		return RedirectToAction("List");
 	}
 }
