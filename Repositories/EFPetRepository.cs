@@ -30,7 +30,7 @@ public class EFPetRepository: IPetRepository {
 		if (originalPet != null) {
 			originalPet.Name = pet.Name;
 			originalPet.Description = pet.Description;
-			originalPet.Url = pet.Url;
+			originalPet.ImgUrl = pet.ImgUrl;
 			_context.SaveChanges();
 		}
 		return pet;

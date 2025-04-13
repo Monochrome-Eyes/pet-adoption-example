@@ -9,7 +9,7 @@
 <div class="row">
 	@foreach (var pet in Model) {
 		<div class="card col-4" style="width: 18rem;">
-			<img src="@Url.Content($"{pet.Url}")" class="card-img-top" />
+			<img src="@Url.Content($"{pet.ImgUrl}")" class="card-img-top" />
 			<div class="card-body">
 				<h5 class="card-title">@pet.Name</h5>
 				<p class="card-text">@pet.Description</p>
